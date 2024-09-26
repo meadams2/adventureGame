@@ -35,20 +35,15 @@ def playNode(game, currentNode):
     game[currentNode]
     (description, menu1, node1, menu2, node2) = currentNode
     print (f"""{description}
-1: {menu1}
-2: {menu2}""")
+    1: {menu1}
+    2: {menu2}""")
     userChoice = input("1 or 2: ")
-    if userChoice.isnumeric():
-        userChoice = int(userChoice)
-        if userChoice == 1:
-            newNode = game[currentNode[2]]
-            currentNode = newNode
-        elif userChoice == 2:
-            newNode = game[currentNode[4]]
-            currentNode = newNode
-        else:
-            print ("Choose 1 or 2, you bovine.")
-    else:
-        print("Choose a number, pookie")
+    userChoice = int(userChoice)
+    #node1 = game.keys()
+    if userChoice == 1:
+        node1 = currentNode[3]
+        node1 = game[currentNode[node1]]
+        currentNode = game[node1]
+    print()
     return currentNode
 main()
