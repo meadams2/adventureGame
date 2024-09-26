@@ -2,9 +2,15 @@
 CS120 Adventure Game
 A haunted house adventure games with multiple ways to live (or die)."""
 def main():
-    getGame()
+    game = getGame()
+    keepGoing = True
     currentNode = "start"
-    playNode(game, currentNode)
+    while keepGoing == True:
+        if currentNode=="quit":
+            keepGoing = False
+        else:
+            keepGoing = True
+            playNode(game, currentNode)
 def getGame():
     game = {
       "start": ["You are in a haunted house. A ghost approaches you.", "Run away from the ghost.", "run", "Talk to the ghost", "talk"], 
@@ -27,4 +33,22 @@ def getGame():
     return game
 def playNode(game, currentNode):
     game[currentNode]
-    print
+    (description, menu1, node1, menu2, node2) = currentNode
+    print (f"""{description}
+1: {menu1}
+2: {menu2}""")
+    userChoice = input("1 or 2: ")
+    if userChoice.isnumeric():
+        userChoice = int(userChoice)
+        if userChoice == 1:
+            newNode = game[currentNode[2]]
+            currentNode = newNode
+        elif userChoice == 2:
+            newNode = game[currentNode[4]]
+            currentNode = newNode
+        else:
+            print ("Choose 1 or 2, you bovine.")
+    else:
+        print("Choose a number, pookie")
+    return currentNode
+main()
