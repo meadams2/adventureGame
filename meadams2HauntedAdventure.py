@@ -6,11 +6,11 @@ def main():
     keepGoing = True
     currentNode = "start"
     while keepGoing == True:
-        if currentNode=="quit":
+        if currentNode == "quit":
             keepGoing = False
         else:
-            keepGoing = True
-            playNode(game, currentNode)
+            currentNode = playNode(game, currentNode)
+
 def getGame():
     game = {
       "start": ["You are in a haunted house. A ghost approaches you.", "Run away from the ghost.", "run", "Talk to the ghost", "talk"], 
@@ -31,8 +31,9 @@ def getGame():
       "taunt": ["Why would you do that? The ghost kills you.", "Quit", "quit", "Start over", "start"], 
       }
     return game
-def playNode(game, currentNode):
-    game[currentNode]
+
+def playNode(game, nodeKey):
+    currentNode = game[nodeKey]
     (description, menu1, node1, menu2, node2) = currentNode
     print (f"""{description}
     1: {menu1}
@@ -41,9 +42,8 @@ def playNode(game, currentNode):
     userChoice = int(userChoice)
     #node1 = game.keys()
     if userChoice == 1:
-        node1 = currentNode[3]
-        node1 = game[currentNode[node1]]
-        currentNode = game[node1]
-    print()
+        currentNode = node1
+    if userChoice == 2:
+        currentNode = node2
     return currentNode
 main()
