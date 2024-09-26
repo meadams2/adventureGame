@@ -4,8 +4,15 @@ CS120 Adventure Game
 Define main():
 	Run getGame()
 	currentNode = "start"
-	Run playNode(game, currentNode)
+	keepGoing gets True
+	while keepGoing==True:
+		Run playNode(game, currentNode)
+		if currentNode = "quit"
+			keepGoing gets false
+		else:
+			keepGoing gets true
 Define getGame():
+	
 	No parameters needed
 	game = {
       "start": ["You are in a haunted house. A ghost approaches you.", "Run away from the ghost.", "run", "Talk to the ghost", "talk"], 
@@ -35,11 +42,15 @@ Define playNode():
 		1 menu1
 		2 menu2
 	Get userChoice input
-	If userChoice is 1
-		newNode gets node1
-	If userChoice is 2
-		newNode gets node2
+	Check if userChoice is numeric:
+		If userChoice is 1
+			newNode gets node1
+			currentNode = newNode
+		If userChoice is 2
+			newNode gets node2
+		Else:
+			print("Choose 1 or 2, you bovine.")
 	Else:
-		print("Choose 1 or 2, you bovine.")
-	
+		print("Give me a number, pookie")
+	return currentNode
 
