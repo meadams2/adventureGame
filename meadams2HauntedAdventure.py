@@ -40,7 +40,6 @@ def playNode(game, nodeKey):
     2: {menu2}""")
     userChoice = input("1 or 2: ")
     userChoice = int(userChoice)
-    #node1 = game.keys()
     if userChoice == 1:
         currentNode = node1
     if userChoice == 2:
