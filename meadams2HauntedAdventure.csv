@@ -15,3 +15,4 @@ window2,You fell onto a sharp rock. ,Quit,quit,Start over,start
 nothing,Why would you do that? The ghost kills you.,Quit,quit,Start over,start
 frontDoor,You escaped!,Quit,quit,Start over,start
 taunt,Why would you do that? The ghost kills you.,Quit,quit,Start over,start
+closeDoor,You forgot the ghost can walk through walls. You die.,Quit,quit,Start over,start
