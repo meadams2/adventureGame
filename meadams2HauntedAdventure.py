@@ -29,7 +29,8 @@ def getGame():
       "nothing": ["Why would you do that? The ghost kills you.", "Quit", "quit", "Start over", "start"], 
       "frontDoor": ["You escaped!", "Quit", "quit", "Start over", "start"], 
       "taunt": ["Why would you do that? The ghost kills you.", "Quit", "quit", "Start over", "start"], 
-      }
+      "closeDoor": ["You forgot the ghost can walk through walls. You die.", "Quit", "quit", "Start over", "start"], 
+ }
     return game
 
 def playNode(game, nodeKey):
